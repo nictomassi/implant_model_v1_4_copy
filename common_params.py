@@ -7,7 +7,7 @@ NELEC = 16
 # ELEC_BASALPOS = 26.25  # in mm ** removed this 20 May 2024 to make sure electrode array is centered in neurons
 
 # Neural activation parameters
-R_EXT = 70.0   # ohm-cm
+R_EXT = 250.0 #used in paper #70.0   # ohm-cm
 RE_TEXT = 'RE' + str(round(R_EXT))
 R_INT = 70.0  # ohm-cm
 RI_TEXT = 'RI' + str(round(R_INT))
@@ -52,7 +52,7 @@ tp_extend = False  # Whether to fit postion and density and end electrodes
 
 # Not used by the 2D exploration tool. These are left in for convenience
 global scenarios
-# scenarios = ['Gradual80R75']
+scenarios = ['Gradual80R75']
 # scenarios = ['Uniform80R05']
 # scenarios = ['Uniform100R05', 'Uniform100R10', 'Uniform100R15']
 # scenarios = ['Uniform80R05', 'Uniform80R10', 'Uniform80R15']  # Used for Fig 3
@@ -81,14 +81,14 @@ global scenarios
 
 
 # Actual subject data. For inverse model only
-# scenarios = ['S22']  # paper "good fit" examples. Figure 7
-# scenarios = ['S29', 'S56']  # paper "poor fit" examples. Figure 8
+#scenarios = ['S22']  # paper "good fit" examples. Figure 7
+#scenarios = ['S29', 'S56']  # paper "poor fit" examples. Figure 8
 # scenarios = ['A002R', 'A005L', 'A014L', 'A022L', 'A022R', 'A023R', 'A024L']
 # scenarios = ['S43']
 # all subjects with CT data
 # scenarios = ['RampRposSGradual80', 'S22']
-scenarios = ['Gradual80R00', 'RampRposS80', 'RampRposSGradual80', 'S42', 'S43']
-# scenarios = ['RampRposSGradual80']
+# scenarios = ['Gradual80R00', 'RampRposS80', 'RampRposSGradual80', 'S42', 'S43']
+#scenarios = ['RampRposSGradual80']
 
 # scenarios = ['Gradual80R00', 'RampRposS80', 'RampRposSGradual80', 'S22', 'S27', 'S29', 'S38', 'S40', 'S41', 'S42',
 #              'S43', 'S46', 'S47', 'S49R', 'S50', 'S52', 'S53', 'S54', 'S55', 'S56', 'S57']
@@ -126,5 +126,7 @@ elif RE_TEXT == 'RE125O':
     FIELDTABLE = '28Dec2023_MedResolution_Rext1250.dat'
 elif RE_TEXT == 'RE2500':
     FIELDTABLE = '7Dec2023_MedResolution_Rext2500_nonans.dat'
+
+FIELDTABLE = 'SampleVoltageTable_nonans.dat'
 
 FIELDTABLE = vtable_dir + FIELDTABLE

@@ -9,6 +9,10 @@ import matplotlib.pyplot as plt
 import set_scenario as s_scen
 import surv_full
 import get_thresholds as gt
+import common_params
+import importlib
+
+importlib.reload(common_params)
 from common_params import *
 
 
@@ -147,7 +151,7 @@ def fwd_model_4(mode):
             [thr_sim_db[:, i], neuron_vals] = gt.get_thresholds(act_vals, fp, simParams)
 
         # Write a csv file
-        with open(outfile, mode='w') as data_file:
+        with open(outfile, mode='w', newline='') as data_file:
             data_writer = csv.writer(data_file, delimiter=',', quotechar='"')
             for row in range(0, NELEC):
                 data_writer.writerow([row, surv_vals[row], electrodes['rpos'][row], thr_sim_db[row, 0],

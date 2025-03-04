@@ -683,7 +683,7 @@ def inverse_model_combined(mode):  # Start this script
                     rpos_err_metric = np.mean(np.abs(rposerrs))
                     rpos_err_summary[scen] = rpos_err_metric
 
-                    [dist_corr[scen], dist_corr_p[scen]] = stats.pearsonr(1 - rposvals[1:-1], 1 - fitrposvals[1:-1])
+                    #[dist_corr[scen], dist_corr_p[scen]] = stats.pearsonr(1 - rposvals[1:-1], 1 - fitrposvals[1:-1])
 
                 else:
                     rposerrs = np.abs(np.subtract(fitrposvals, ct_vals))

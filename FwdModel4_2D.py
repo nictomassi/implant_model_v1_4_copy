@@ -20,16 +20,21 @@ import os
 import csv
 import matplotlib.pyplot as plt
 import pickle
-from common_params import *
+import common_params
+import importlib
 import figs4_5_2D_contour
 import fig3_neuron_activation
+
+importlib.reload(common_params)
+from common_params import *
 
 
 def fwd_model_2D(mode):
 
     # TODO:  should loop on espace values. Looping could then be removed from the param_survey script
     if mode == 'main':
-        # espace = 0.85
+        #change based on subject or make this automated
+        #espace = 0.85
         espace = 1.1
 
         pass  # proceed as normal
